@@ -31,7 +31,7 @@
     <div v-if="showModal" class="overlay">
       <div class="modal">
         {{ newNote }}
-        <textarea v-model.trim="newNote" name="note" id="note" cols="30" rows="10"></textarea>
+        <textarea v-model.trim="newNote" @keydown="errorMessage = ''" name="note" id="note" cols="30" rows="10"></textarea>
         <p v-if="errorMessage">
           {{ errorMessage }}
         </p>
