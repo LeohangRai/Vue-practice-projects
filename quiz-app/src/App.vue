@@ -17,7 +17,7 @@
       <input v-model.trim="searchKeyword" type="text" placeholder="Search...">
     </header>
     <div class="options-container">
-      <Card />
+      <Card v-for="quiz in quizes" :quiz="quiz" :key="quiz.id" />
     </div>
   </div>
 </template>
