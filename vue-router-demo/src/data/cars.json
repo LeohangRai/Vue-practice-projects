@@ -3,30 +3,50 @@
         "id": 1,
         "name": "Chevy",
         "price": 14000,
-        "year": 2014
+        "year": 2014,
+        "contact": {
+            "dealer": "Leohang",
+            "number": "+977-9876543210"
+        }
     },
     {
         "id": 2,
         "name": "Bently",
         "price": 15000,
-        "year": 2007
+        "year": 2007,
+        "contact": {
+            "dealer": "Bibek",
+            "number": "+91-9336543210"
+        }
     },
     {
         "id": 3,
         "name": "Ford",
         "price": 200000,
-        "year": 2004
+        "year": 2004,
+        "contact": {
+            "dealer": "Aadil",
+            "number": "+911-1235210"
+        }
     },
     {
         "id": 4,
         "name": "Benz",
         "price": 140000,
-        "year": 2017
+        "year": 2017,
+        "contact": {
+            "dealer": "Biraj",
+            "number": "+91-9824323210"
+        }
     },
     {
         "id": 5,
         "name": "Ferari",
         "price": 150000,
-        "year": 2023
+        "year": 2023,
+        "contact": {
+            "dealer": "Yajindra",
+            "number": "+82-1234567"
+        }
     }
 ]
