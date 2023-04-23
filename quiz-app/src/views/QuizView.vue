@@ -10,12 +10,22 @@ const currentQuizId = Number(route.params.id);
 const currentQuiz = quizes.find((q) => q.id === currentQuizId);
 const currentQuestionIndex = ref(0);
 
-const questionNumberStatus = computed(() => `${currentQuestionIndex.value}/${currentQuiz.questions.length}`);
+/* To show Question 1/3 --> Question 2/3 and so on */
+const questionNumberStatus = computed(
+  () => `${currentQuestionIndex.value}/${currentQuiz.questions.length}`
+);
+/* To fill the completionn bar by percentage */
+const barPercent = computed(
+  () => `${(currentQuestionIndex.value / currentQuiz.questions.length) * 100}%`
+);
 </script>
 
 <template>
   <div>
-    <QuizHeader :questionNumberStatus="questionNumberStatus" />
+    <QuizHeader
+      :questionNumberStatus="questionNumberStatus"
+      :barPercent="barPercent"
+    />
     <div>
       <Question :question="currentQuiz.questions[currentQuestionIndex]" />
     </div>
