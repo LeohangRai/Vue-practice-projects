@@ -1,6 +1,11 @@
 <script setup>
-  import { defineProps } from 'vue';
-  const { question } = defineProps(['question']);
+import { defineProps, defineEmits } from 'vue';
+const { question } = defineProps(['question']);
+const emit = defineEmits(['optionSelected']);
+
+function handleOptionSelection(isCorrect) {
+  emit('optionSelected', isCorrect);
+}
 </script>
 
 <template>
@@ -10,7 +15,12 @@
     </h1>
   </div>
   <div class="options-container">
-    <div v-for="option in question.options" :key="option.id" class="option">
+    <div
+      class="option"
+      v-for="option in question.options"
+      :key="option.id"
+      @click="handleOptionSelection(option.isCorrect)"
+    >
       <p class="option-label">{{ option.label }}</p>
       <p class="option-value">{{ option.text }}</p>
     </div>
